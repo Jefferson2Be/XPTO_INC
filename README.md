@@ -1,7 +1,7 @@
 # XPTO_INC
-## Desafio Dev TOTVS
+## Desafio Dev TOTVS 📋
 
-# Escopo
+# Escopo 📦
 
 A empresa XPTO Inc tem a necessidade de feedback do responsável do almoxarifado quanto a entrega de remessas e mercadorias entre as unidades dela. Uma unidade cadastra uma solicitação onde identifica o ponto de coleta, a unidade destino e qual a mercadoria/conteúdo da entrega.
 
@@ -14,8 +14,9 @@ Para tal objetivo, pretende-se implementar:
 
 ---
 
-# Configurações
+# Configurações ⚙️
 
 * **Código Dataset pré Cadastro:** `DS_PRE_CADASTRO_FILIAL`
-* **Código MecanismoCustomizado:** `MEC_ALMOXARIFE_ENTREGA`
+* **Código Dataset Formulário:** `FORM_FEEDBACK_ENTREGA`
+* **Código Mecanismo Customizado:** `MEC_ALMOXARIFE_ENTREGA`
 * **Versão do fluig:** Crystal Mist 1.8.2-260413
