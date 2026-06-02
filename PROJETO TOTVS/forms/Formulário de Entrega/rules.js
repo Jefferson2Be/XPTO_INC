@@ -8,15 +8,19 @@ const rules = {
             return
         }
 
-        let consult = await fetch(`https://viacep.com.br/ws/${campoCep}/json/`)
-        let response = await consult.json()
+        try {
+            let consult = await fetch(`https://viacep.com.br/ws/${campoCep}/json/`)
+            let response = await consult.json()
+            if (!utils.isEmpty(response)) {
+                $("#cidadeOrigem").val(response.localidade)
+                $("#bairroOrigem").val(response.bairro)
+                $("#endOrigem").val(response.logradouro)
+            }
 
-        if (!utils.isEmpty(response)) {
-            $("#cidadeOrigem").val(response.localidade)
-            $("#bairroOrigem").val(response.bairro)
-            $("#endOrigem").val(response.logradouro)
+        } catch (error) {
+            utils.toast('Atenção !', 'Ocorreu algum erro na consulta do Cep')
+            console.log("Erro" + error)
         }
-
     },
     persist: () => {
         if (!utils.isEmpty($('[id$=mecRecebida]').val())) {
