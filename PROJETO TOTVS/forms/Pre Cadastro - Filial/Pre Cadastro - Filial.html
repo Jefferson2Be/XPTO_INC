@@ -1,0 +1,89 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide-flat.min.css" />
+	<link type="text/css" rel="stylesheet" href="style.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+</head>
+
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+
+
+			<!-- Campos de controle-->
+			<input type="hidden" name="matriculaResponsavel" id="matriculaResponsavel">
+			<!--Fim Campos de controle-->
+
+			<section id="painelPreCadastro">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Cadastrar Filial</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-3 form-group">
+								<label for="codFilial" class="required">Código da Filial</label>
+								<input type="text" class="form-control" name="codFilial" id="codFilial" mask="#">
+							</div>
+
+							<div class="col-md-3 form-group">
+								<label for="descFilial" class="required">Descrição da Filial</label>
+								<input type="text" class="form-control" name="descFilial" id="descFilial">
+							</div>
+
+							<div class="col-md-3 form-group">
+								<label for="endFilial" class="required">Endereço da Filial</label>
+								<input type="text" class="form-control" name="endFilial" id="endFilial">
+							</div>
+
+							<div class="col-md-3 form-group">
+								<label for="respFilial" class="required">Responsável</label>
+								<input type="zoom" id="respFilial" name="respFilial" data-zoom="{		
+										'displayKey':'colleagueName',
+										'datasetId':'colleague',
+										'maximumSelectionLength':'1',
+										'placeholder':'Selecione o Responsável ...',
+										'fields':[
+													{
+													'field':'colleagueName',
+													'label':'Responsável'
+													},
+													{
+													'field':'colleagueId',
+													'visible':'false'
+													}
+												]
+										}" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row fs-sm-margin-vertical fs-text-right">
+					<div class="col-sm-12">
+						<button id="btnSalvar" name="btnSalvar" type="button" class="btn btn-primary"
+							onclick="rules.verificaObrigatoriedade()">
+							Salvar
+						</button>
+					</div>
+				</div>
+			</section>
+
+			
+		</form>
+	</div>
+
+	<script src="validateFields.js"></script>
+	<script src="utils.js"></script>
+	<script src="zoom.js"></script>
+	<script src="rules.js"></script>
+	<script src="consultaDS.js"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>

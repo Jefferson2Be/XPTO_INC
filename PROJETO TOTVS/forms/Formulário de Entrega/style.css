@@ -1,0 +1,21 @@
+/* Relacionado a validateFields*/
+.required::after {
+  content: " *";
+  color: #cc3d3d;
+}
+
+/* Relacionado a validateFields*/
+.checkbox label.required::after {
+  content: ""; 
+}
+
+/* Relacionado a validateFields*/
+label:has(+ .checkbox)::after {
+  content: " *";
+  color: #cc3d3d;
+}
+
+
+textarea{
+  resize: vertical !important;
+}
